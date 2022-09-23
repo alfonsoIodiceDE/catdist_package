@@ -1,0 +1,26 @@
+{
+    "id": "6F06E427",
+    "path": "~/Dropbox/CategoricalVariablesDistances/cat_distances_project/catdist/R/cat_delta.R",
+    "project_path": "R/cat_delta.R",
+    "type": "r_source",
+    "hash": "2485481901",
+    "contents": "",
+    "dirty": false,
+    "created": 1663768393178.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "36,32",
+        "scrollLine": "17"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1663768405,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1663768405930,
+    "read_only": false,
+    "read_only_alternatives": []
+}

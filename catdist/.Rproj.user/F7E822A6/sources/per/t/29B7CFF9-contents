@@ -1,0 +1,26 @@
+catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1){
+
+
+  out_delta = cat_delta(x=x,y=y,method=method)
+  delta = out_delta[[method]] %>% data.matrix
+  Z = out_delta$Z %>% data.matrix
+
+  ?ifelse
+
+  if(is.null(dim(weights))){
+    if(length(weights) == 1){
+      distance_mat = Z  %*% delta %*%  t(Z)
+    }else{
+      W=diag(weights,nrow=length(weights),ncol=length(weights))
+      distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
+    }
+  }else{
+    W=weights
+    distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
+  }
+  # print(dim(distance_mat))
+  return(distance_mat)
+}
+
+
+

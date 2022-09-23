@@ -1,0 +1,13 @@
+Package: catdist
+Type: Package
+Title: Distance and Dissimilarities for Categorical Data 
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+Depends: tidyverse, ca, data.table,tidyverse,tidymodels,fastDummies,aricode,corrplot,clustrd,cluster,Matrix,purrr,tidytext,kableExtra
+Imports: tidyverse, ca, data.table,tidyverse,tidymodels,fastDummies,aricode,corrplot,clustrd,cluster,Matrix,purrr,tidytext,kableExtra
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true

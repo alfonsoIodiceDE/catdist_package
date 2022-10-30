@@ -5,6 +5,10 @@ cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
   Qlist=split(Q,1:length(Q))
   blocks = bdiag(map(.x=Qlist,~matrix(1,nrow=.x,ncol=.x)))
   
+  Qlisty=split(c(Q,ncol(Z_y)),1:length(c(Q,ncol(Z_y))))
+  blocksy = bdiag(map(.x=Qlisty,~matrix(1,nrow=.x,ncol=.x)))
+  
+  
   create_delta <- function(Z,nvar,p,chi2=FALSE){
     if(chi2==FALSE){
       
@@ -53,9 +57,20 @@ cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
   if(method=="supervised"){
     # print("in suvervised")
     #ZZyod
-    full_delta = blocks * create_delta(t(Z)%*%Z_y/zm,3/2,1,chi2=FALSE) # so that ((3-1)*(nv-1))= 1
+    full_delta = blocks * create_delta((t(Z)%*%Z_y)/zm,3/2,1,chi2=FALSE) # so that ((3-1)*(nv-1))= 1
     
   }
+  
+  if(method=="supervised_full"){
+    # print("in suvervised")
+    #ZZyod
+    ZZy <- cbind(Z,Z_y)
+    zmy <- c(zm,colSums(t(Z_y)%*%Z_y))
+    BBy <- (t(ZZy)%*%ZZy)/zmy
+    full_delta = blocksy * create_delta(BBy,3/2,1,chi2=FALSE) # so that ((3-1)*(nv-1))= 1
+    full_delta = full_delta[1:ncol(Z),1:ncol(Z)]
+  }
+  
   if(method=="matching"){
     #print("in matching")
     full_delta = blocks/length(Q)
@@ -106,7 +121,8 @@ cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
     full_delta = 1/(1+(log(n/zm)%*%t(log(n/zm))))
     diag(full_delta) = 1
     full_delta = (blocks*(1/full_delta -1))/nvar
-    
+  #  if (sum(is.nan(full_delta))>0)
+  #    print('NaNs!!')
   }
   
   if(method=="lin"){
@@ -117,13 +133,8 @@ cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
     pp<-pr+pc
     pplog<-log(pr)+log(pc)  
     diag(pp)<-prop
-    linsim<- 2*log(pp)
-    linsim2<- 2*log(pp)/pplog
-    full_delta<-as.matrix(blocks*(1/linsim2 -1)) # We get inf*0=nan. Fix this:
-    full_delta[is.infinite(full_delta)]=0
-    full_delta[is.nan(full_delta)]=0
-    full_delta = full_delta/nvar
-    # print(full_delta)
+    linsim2<- (pplog - 2*log(pp))/2*log(pp) 
+    full_delta<-as.matrix(blocks*linsim2)/nvar
   }
   
   if(method=="var_entropy"){

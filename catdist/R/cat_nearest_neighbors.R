@@ -18,7 +18,7 @@ cat_nearest_neighbors<-function(train_df,assess_df = NULL, k, method = method){
   # print(method)
   # delta = out_cdist$deltas[[method]] %>% as.matrix
   delta = cat_delta(x = train_df, y = train_resp, method = method)[[1]]
-
+  
   Z_tr = dummy_cols(train_df, remove_selected_columns = TRUE) %>%
     as_tibble()
   # out_delta = cat_delta(x=train_df,y=NULL,method = method)
@@ -29,8 +29,8 @@ cat_nearest_neighbors<-function(train_df,assess_df = NULL, k, method = method){
 
   Z_ts = dummy_cols(rbind(assess_df), remove_selected_columns = TRUE) %>%
     as_tibble() %>% select(names(Z_tr))
-
-
+  #print(dim(Z_tr))
+  #print(dim(delta))
   D_tr_ts = (Z_tr %>% data.matrix()) %*% delta %*% t(Z_ts%>% data.matrix())
   D_tr_ts = as.data.table(D_tr_ts)
   preds = map_chr(.x = D_tr_ts, .f= function(x = .x){

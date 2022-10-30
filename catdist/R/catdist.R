@@ -1,6 +1,9 @@
-catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1){
+catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1,out_delta=NULL){
   
   if(length(method)==1){
+    
+    # print(method)
+    
     out_delta = cat_delta(x=x,y=y,method=method)
     delta = out_delta[[method]] %>% data.matrix
     Z = out_delta$Z %>% data.matrix
@@ -70,7 +73,14 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1){
   
   
   # print(dim(distance_mat))
-  return(distance_mat)
+  if(is.null(out_delta)){
+    return(distance_mat)
+  }else{
+    out_catdist = list()
+    out_catdist$distance_mat = distance_mat
+    out_catdist$delta = delta
+    return(out_catdist)
+  }
 }
 
 

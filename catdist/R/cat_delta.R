@@ -45,13 +45,19 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   
   
   if(method %in% c("tot_var_dist", "gifi_chi2",
-                   "supervised","matching","eskin",
+                   "supervised","supervised_full","matching","eskin",
                    "goodall_3","goodall_4","iof","of","lin","var_entropy","var_mutability")){
     # print("in custom")
     full_delta = cat_custom_delta(ZZod=ZZod,Z=Z,Z_y=Z_y,Z_list=Z_list,
                                   zm=zm,Q=Q,nvar=nvar,method=method,Qs=Qs)
-
+  ### Checks for NA / NaN
+   # is.nan.data.frame <- function(x)
+  #    do.call(cbind, lapply(x, is.nan))
     
+  #  if (sum(is.na(as.matrix(full_delta))) >0)
+  #    print(sum(is.na(as.matrix(full_delta))))
+  #  full_delta[is.nan.data.frame(full_delta)] <- 0
+   # full_delta[is.na(full_delta)]=0
   }else{
     
     
@@ -84,23 +90,33 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
     #print("distance_blocks$blocks")
     #print(distance_blocks$blocks)
     
+    
+    
     distance_blocks = distance_blocks %>%
       mutate(block_dist=map(
         .x=blocks,.f = function(x=.x){
+          x[is.na(x)]=0
           phil_dist = philentropy::distance(x = x,method=catdiss,
                                             mute.message = TRUE,p=mkw_p);
+          
           if(is_scalar_vector(phil_dist)){
-            
+            # print(is_scalar_vector(phil_dist))  
             phil_dist=matrix(phil_dist,2,2);
             diag(phil_dist)=0}
+          
           return(phil_dist)
         }
       )
       )
+    # print("distance_blocks$block_dist")
+     # print(distance_blocks$block_dist)
+    # 
     
-    #print("distance_blocks$block_dist")
-    #print(distance_blocks$block_dist)
-    
+    ####################################################################
+    ####################################################################
+    ### THE WEIGHTS SHOULD GO HERE #####################################
+    ####################################################################
+    ####################################################################
     
     delta_blocks = tibble(id=as.list(1:nvar)) %>%
       mutate(diag_delta = map(.x=id,
@@ -109,6 +125,8 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
                                            pull(block_dist))
       )
       )
+    ####################################################################
+    ####################################################################
     
     #print("delta_blocks$diag_delta")
     #print(delta_blocks$diag_delta)

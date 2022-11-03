@@ -27,6 +27,5 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 }
 
 \examples{
-data(bribery)
-}
+data(tictac)}
 \keyword{datasets}

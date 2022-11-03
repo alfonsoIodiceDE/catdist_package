@@ -4,8 +4,7 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1,out_delta=NULL){
     
     # print(method)
     
-    
-    
+
     out_delta = cat_delta(x=x,y=y,method=method)
     delta = out_delta[[method]] %>% data.matrix
     delta_names = out_delta$delta_names

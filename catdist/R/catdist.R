@@ -4,8 +4,19 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1,out_delta=NULL){
     
     # print(method)
     
+    
+    
     out_delta = cat_delta(x=x,y=y,method=method)
     delta = out_delta[[method]] %>% data.matrix
+    delta_names = out_delta$delta_names
+    ########################################################################
+    ########################################################################
+    ########################################################################
+    # delta[is.na(delta)]=0
+    ########################################################################
+    ########################################################################
+    ########################################################################
+    
     Z = out_delta$Z %>% data.matrix
     
     if(is.null(dim(weights))){
@@ -79,6 +90,7 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weigths=1,out_delta=NULL){
     out_catdist = list()
     out_catdist$distance_mat = distance_mat
     out_catdist$delta = delta
+    out_catdist$delta_names = delta_names
     return(out_catdist)
   }
 }

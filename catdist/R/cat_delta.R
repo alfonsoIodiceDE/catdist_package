@@ -1,18 +1,14 @@
 cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   
-  # library("tidyverse")
-  # library("Matrix")
-  # library("purrr")
-  # library("fastDummies")
-  # library("data.table")
-  # source("R/z_preproc.R")
-  # source("R/cat_custom_delta.R")
+
   catdiss = method
+  # print(map(x,class))
+   # print(map_dbl(x,nlevels))
+  x = map_df(x,fct_drop)
+  # print(map_dbl(x,nlevels))
   
-  # print("catdiss")
-   
   
-  if(is.null(dim(x))){
+    if(is.null(dim(x))){
     Q=nlevels(x)
     }else{
     Q=map_dbl(x,nlevels)
@@ -24,6 +20,7 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   
   z_prep = z_preproc(x=x,y=y,Q=Q)
   #print("preprocessed")
+  Z_names= colnames(z_prep$Z)
   
   Z = z_prep$Z %>% data.matrix()
   
@@ -135,7 +132,8 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
     full_delta = full_delta/(nvar-1)
   }
   out=list()
-  # out$full_delta = full_delta
+  out$delta_names = Z_names
+  # full_delta[is.na(full_delta)]=0
   out[[method]] = full_delta %>% as.matrix
   # out$delta_blocks = delta_blocks
   out$Z = Z

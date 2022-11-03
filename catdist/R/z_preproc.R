@@ -6,6 +6,7 @@ z_preproc = function(x,y=NULL,Q){
   
   Z_tib = dummy_cols(x, remove_selected_columns = TRUE) %>% as_tibble()
   Z = dummy_cols(x, remove_selected_columns = TRUE) %>% data.matrix()
+  Z_names=colnames(Z)
   
   if(!is.null(y)){
     Z_y = as_tibble(factor(y)) %>% dummy_cols(remove_selected_columns = TRUE) %>% data.matrix()
@@ -27,8 +28,10 @@ z_preproc = function(x,y=NULL,Q){
   
   out$ZZod=ZZod
   out$zm=zm
-  out$Z = Z_tib
+  out$Z= Z_tib
+  # out$Z = Z
   out$Z_list = Z_list 
+  
   out$level_pos = level_pos
   return(out)
 }

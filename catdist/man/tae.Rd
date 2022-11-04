@@ -1,14 +1,14 @@
 \name{tae}
 \alias{tae}
 \docType{data}
-\title{Teaching Assistant Evaluation Data Set}
+\title{Teaching Assistant Evaluation Data Set (UCI)}
 \description{
 The data consist of evaluations of teaching performance over three regular semesters and two summer semesters of 151 teaching assistant (TA) assignments at the Statistics Department of the University of Wisconsin-Madison. The scores were divided into 3 roughly equal-sized categories ("low", "medium", and "high") to form the class variable.
 }
 
 \usage{data("tae")}
 \format{
-   A data frame with 151 observations on 6 categorical variables.
+   A data frame with 151 observations on 6 variables.
   \describe{
     \item{\code{TA}}{Whether of not the TA is a native English speaker (binary); 1=English speaker, 2=non-English speaker}
     \item{\code{Instructor}}{Course instructor (categorical, 25 categories)}

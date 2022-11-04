@@ -1,7 +1,7 @@
 \name{tictac}
 \alias{tictac}
 \docType{data}
-\title{Tic-Tac-Toe Endgame Data Set}
+\title{Tic-Tac-Toe Endgame Data Set (UCI)}
 \description{
 This data set contains the complete set of possible board configurations at the end of tic-tac-toe games, where "x" is assumed to have played first. First nine attributes are representing nine fields on tic-tac-toe board and tenth is class attribute which contains information if x player won (i.e., true when "x" has one of 8 possible ways to create a "three-in-a-row").
 }

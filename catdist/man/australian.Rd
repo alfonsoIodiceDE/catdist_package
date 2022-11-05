@@ -32,6 +32,9 @@ This data set concerns credit card applications. It consists of 14 variables and
 Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 }
 
+\source{https://archive.ics.uci.edu/ml/datasets/statlog+(australian+credit+approval)}
+
+
 \examples{
 data(australian)}
 \keyword{datasets}

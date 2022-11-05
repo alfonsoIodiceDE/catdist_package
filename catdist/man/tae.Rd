@@ -21,6 +21,8 @@ The data consist of evaluations of teaching performance over three regular semes
 Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 }
 
+\source{https://archive.ics.uci.edu/ml/datasets/teaching+assistant+evaluation}
+
 \examples{
 data(tae)}
 \keyword{datasets}

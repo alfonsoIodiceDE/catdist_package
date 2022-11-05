@@ -37,6 +37,8 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 This lymphography domain was obtained from the University Medical Centre, Institute of Oncology, Ljubljana, Yugoslavia. Thanks go to M. Zwitter and M. Soklic for providing the data. 
 }
 
+\source{https://archive.ics.uci.edu/ml/datasets/Lymphography}
+
 \examples{
 data(lymphography)}
 \keyword{datasets}

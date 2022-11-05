@@ -10,6 +10,7 @@ There are 19 classes, only the first 15 of which have been used in prior work. T
 \format{
   A data frame with 307 observations and 36 variables (including the class attribute, "class"). 
   \describe{
+      \item{\code{class}}{diaporthe-stem-canker, charcoal-rot, rhizoctonia-root-rot, phytophthora-rot, brown-stem-rot, powdery-mildew, downy-mildew, brown-spot, bacterial-blight, bacterial-pustule, purple-seed-stain, anthracnose, phyllosticta-leaf-spot, alternarialeaf-spot, frog-eye-leaf-spot, diaporthe-pod-&-stem-blight, cyst-nematode, 2-4-d-injury, herbicide-injury}
     \item{\code{date}}{april, may, june, july, august, september, october, ?}
     \item{\code{plant-stand}}{normal, lt-normal, ?}
     \item{\code{precip}}{lt-norm, norm, gt-norm, ?}
@@ -45,7 +46,6 @@ There are 19 classes, only the first 15 of which have been used in prior work. T
     \item{\code{seed-size}}{norm, lt-norm, ?}
     \item{\code{shriveling}}{absent, present, ?}
     \item{\code{roots}}{norm, rotted, galls-cysts, ?}
-    \item{\code{class}}{diaporthe-stem-canker, charcoal-rot, rhizoctonia-root-rot, phytophthora-rot, brown-stem-rot, powdery-mildew, downy-mildew, brown-spot, bacterial-blight, bacterial-pustule, purple-seed-stain, anthracnose, phyllosticta-leaf-spot, alternarialeaf-spot, frog-eye-leaf-spot, diaporthe-pod-&-stem-blight, cyst-nematode, 2-4-d-injury, herbicide-injury}
 }
 }
 \references{

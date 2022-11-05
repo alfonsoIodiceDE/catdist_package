@@ -8,7 +8,7 @@ This data set contains the complete set of possible board configurations at the 
 
 \usage{data("tictac")}
 \format{
-   A data frame with 958 observations on 10 categorical variables.
+   A data frame with 958 observations on 10 categorical variables (including the class variable, "class").
   \describe{
     \item{\code{TL}}{top left square}
     \item{\code{TM}}{top middle square}
@@ -19,7 +19,7 @@ This data set contains the complete set of possible board configurations at the 
     \item{\code{BL}}{bottom left square}
     \item{\code{BM}}{bottom middle square}
     \item{\code{BR}}{bottom right square}
-    \item{\code{class}}{true: x won, false: x lost}
+    \item{\code{class}}{true: \code{x} won, false: \code{x} lost}
   }
 }
 \references{

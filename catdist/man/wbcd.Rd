@@ -8,7 +8,7 @@ The data set provides data for 569 patients on 30 features of the cell nuclei ob
 
 \usage{data("wbcd")}
 \format{
-   A data frame with 569 observations on the following variables.
+   A data frame with 569 observations on the following variables (including the class variable, "class").
   \describe{
     \item{\code{ID}}{ID number}
     \item{\code{Radius_mean}}{a numeric vector}

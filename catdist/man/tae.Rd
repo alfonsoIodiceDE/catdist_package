@@ -7,8 +7,7 @@ The data consist of evaluations of teaching performance over three regular semes
 }
 
 \usage{data("tae")}
-\format{
-   A data frame with 151 observations on 6 variables.
+\format{A data frame with 151 observations on 6 variables (including the class variable, "class").
   \describe{
     \item{\code{TA}}{Whether of not the TA is a native English speaker (binary); 1=English speaker, 2=non-English speaker}
     \item{\code{Instructor}}{Course instructor (categorical, 25 categories)}

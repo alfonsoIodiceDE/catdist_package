@@ -26,6 +26,8 @@ This data set contains the complete set of possible board configurations at the 
 Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 }
 
+\source{https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame}
+
 \examples{
 data(tictac)}
 \keyword{datasets}

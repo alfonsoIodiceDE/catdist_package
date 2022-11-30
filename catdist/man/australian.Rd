@@ -25,7 +25,7 @@ This data set concerns credit card applications. It consists of 14 variables and
     \item{\code{A12}}{\code{1}, \code{2}, \code{3}}
     \item{\code{A13}}{continuous}
     \item{\code{A14}}{continuous}
-    \item{\code{class}}{\code{1}, \code{2}}
+    \item{\code{class}}{\code{0}, \code{1}}
   }
 }
 \references{

@@ -1,24 +1,24 @@
-\name{tictac}
-\alias{tictac}
+\name{tictactoe}
+\alias{tictactoe}
 \docType{data}
 \title{Tic-Tac-Toe Endgame Data Set (UCI)}
 \description{
 This data set contains the complete set of possible board configurations at the end of tic-tac-toe games, where "x" is assumed to have played first. First nine attributes are representing nine fields on tic-tac-toe board and tenth is class attribute which contains information if x player won (i.e., true when "x" has one of 8 possible ways to create a "three-in-a-row").
 }
 
-\usage{data("tictac")}
+\usage{data("tictactoe")}
 \format{
    A data frame with 958 observations on 10 categorical variables (including the class variable, "class").
   \describe{
-    \item{\code{TL}}{top left square}
-    \item{\code{TM}}{top middle square}
-    \item{\code{TR}}{top right square}
-    \item{\code{ML}}{middle left square}
-    \item{\code{MM}}{middle middle square}
-    \item{\code{MR}}{middle right square}
-    \item{\code{BL}}{bottom left square}
-    \item{\code{BM}}{bottom middle square}
-    \item{\code{BR}}{bottom right square}
+    \item{\code{TL}}{top left square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{TM}}{top middle square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{TR}}{top right square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{ML}}{middle left square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{MM}}{middle middle square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{MR}}{middle right square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{BL}}{bottom left square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{BM}}{bottom middle square, a factor with levels \code{b}, \code{o}, \code{x}}
+    \item{\code{BR}}{bottom right square, a factor with levels \code{b}, \code{o}, \code{x}}
     \item{\code{class}}{true: \code{x} won, false: \code{x} lost}
   }
 }
@@ -29,5 +29,5 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 \source{https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame}
 
 \examples{
-data(tictac)}
+data(tictactoe)}
 \keyword{datasets}

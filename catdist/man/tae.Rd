@@ -9,12 +9,12 @@ The data consist of evaluations of teaching performance over three regular semes
 \usage{data("tae")}
 \format{A data frame with 151 observations on 6 variables (including the class variable, "class").
   \describe{
-    \item{\code{TA}}{Whether of not the TA is a native English speaker (binary); 1=English speaker, 2=non-English speaker}
+    \item{\code{TA}}{Whether of not the TA is a native English speaker (binary); \code{1=English speaker}, \code{2=non-English speaker}}
     \item{\code{Instructor}}{Course instructor (categorical, 25 categories)}
     \item{\code{Course}}{Course (categorical, 26 categories)}
-    \item{\code{Semester}}{Summer or regular semester (binary) 1=Summer, 2=Regular}
+    \item{\code{Semester}}{Summer or regular semester (binary) \code{1=Summer}, \code{2=Regular}}
     \item{\code{Class_size}}{Class size (numerical)}
-    \item{\code{class}}{1=Low, 2=Medium, 3=High}
+    \item{\code{class}}{\code{1=Low}, \code{2=Medium}, \code{3=High}}
   }
 }
 \references{

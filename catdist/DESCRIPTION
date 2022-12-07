@@ -4,7 +4,7 @@ Title: Distances for Categorical Data
 Version: 0.1.0
 Author: Alfonso Iodice D'Enza [aut, cre], Angelos Markos [aut], Michel van de Velden [aut], Carlo Cavicchia [aut]
 Maintainer: Angelos Markos <amarkos at gmail.com>, Alfonso Iodice D'Enza <iodicede@gmail.com>
-Description: A general framework for implementing distances for categorical variables
+Description: A general framework for implementing distances for categorical variables (van de Velden, Iodice D'Enza, Markos and Cavicchia, 2023)
 Depends: tidyverse, ca, data.table,tidymodels,fastDummies,aricode,corrplot,clustrd,cluster,Matrix,purrr,tidytext,kableExtra
 Imports: tidyverse, ca, data.table,tidymodels,fastDummies,aricode,corrplot,clustrd,cluster,Matrix,purrr,tidytext,kableExtra
 License: GPL-3

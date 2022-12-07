@@ -1,7 +1,7 @@
 catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
   
   if(length(method)==1){
-    
+  
     # print(method)
 
     out_delta = cat_delta(x=x,y=y,method=method)

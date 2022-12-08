@@ -29,8 +29,11 @@ outvoteTV <- catdist(vote[,-17], method = "tot_var_dist")
 outvoteHE <- catdist(vote[,-17], method = "hellinger")
 
 ## use the class variable as response variable  (supervised setting)
-outvotesupTV <- catdist(vote[,-17], y = vote[,17], method = "tot_var_dist")
+outvotesupTV <- catdist(vote[,-17], y = vote[,17], method = "supervised")
+
+## use the class variable as response variable  (supervised setting)
+outvotesupTV <- catdist(vote[,-17], y = vote[,17], method = "supervised_full")
 
 ## double the weight of the categories of the first variable (supervised setting)
-outvotesupWTV <- catdist(vote[,-17], y = vote[,17], method = "tot_var_dist", weights = c(rep(2,2),rep(1,46)))
+outvotesupWTV <- catdist(vote[,-17], y = vote[,17], method = "supervised", weights = c(rep(2,2),rep(1,46)))
 }

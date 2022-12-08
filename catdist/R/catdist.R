@@ -1,9 +1,9 @@
 catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
   
   if(length(method)==1){
-  
+    
     # print(method)
-
+    
     out_delta = cat_delta(x=x,y=y,method=method)
     delta = out_delta[[method]] %>% data.matrix
     delta_names = out_delta$delta_names
@@ -17,18 +17,33 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
     
     Z = out_delta$Z %>% data.matrix
     
+    if(is.null(dim(x))){
+      Q=nlevels(x)
+    }else{
+      Q=map_dbl(x,nlevels)
+    }
+    
     if(is.null(dim(weights))){
       if(length(weights) == 1){
         distance_mat = Z  %*% delta %*%  t(Z)
       }else{
-        W=diag(weights,nrow=length(weights),ncol=length(weights))
+        weightsexp =NULL
+        for (i in 1:ncol(x)) {
+          weightsexp = c(weightsexp,rep(weights[i],Q[i]))
+        }
+        W=diag(weightsexp,nrow=length(weightsexp),ncol=length(weightsexp))
         distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
       }
-    }else{
-      W=weights
+    }else{ # Weights is a matrix
+      weights = diag(weights)
+      weightsexp =NULL
+      for (i in 1:ncol(x)) {
+        weightsexp = c(weightsexp,rep(weights[i],Q[i]))
+      }  
+      W=diag(weightsexp)
       distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
     }
-  }else{
+  }else{ #differnt method for each variable
     
     #### THIS STUFF MUST GO  
     # library(ca)
@@ -43,7 +58,7 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
     #                "matching",
     #                "goodall_3","eskin","goodall_4","tot_var_dist")
     # ####
-    # method_vec = method
+    method_vec = method
     
     if(is.null(dim(x))){
       Q=nlevels(x)
@@ -52,7 +67,6 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
     }
     nvar=length(Q)
     level_pos = data.table(start=c(1,cumsum(Q)[-length(Q)]+1),stop=cumsum(Q))
-    
     
     delta_structure = tibble(method = method_vec) %>% mutate(
       x=map(.x=method_vec,~as_tibble(x)),
@@ -70,26 +84,37 @@ catdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
       if(length(weights) == 1){
         distance_mat = Z  %*% delta %*%  t(Z)
       }else{
-        W=diag(weights,nrow=length(weights),ncol=length(weights))
+        
+        weightsexp =NULL
+        for (i in 1:ncol(x)) {
+          weightsexp = c(weightsexp,rep(weights[i],Q[i]))
+        }
+        W=diag(weightsexp,nrow=length(weightsexp),ncol=length(weightsexp))
+        
         distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
       }
-    }else{
-      W=weights
+    }else{ # weights is a matrix
+      weights = diag(weights)
+      weightsexp =NULL
+      for (i in 1:ncol(x)) {
+        weightsexp = c(weightsexp,rep(weights[i],Q[i]))
+      }  
+      W=diag(weightsexp)
       distance_mat = Z %*% W %*% delta %*% W %*% t(Z)
     }
     
   }
   
   # print(dim(distance_mat))
- # if(is.null(out_delta)){
-#    return(distance_mat)
-#  }else{
-    out_catdist = list()
-    out_catdist$distance_mat = distance_mat
-    out_catdist$delta = delta
-    out_catdist$delta_names = delta_names
-    return(out_catdist)
- # }
+  # if(is.null(out_delta)){
+  #    return(distance_mat)
+  #  }else{
+  out_catdist = list()
+  out_catdist$distance_mat = distance_mat
+  out_catdist$delta = delta
+  out_catdist$delta_names = delta_names
+  return(out_catdist)
+  # }
 }
 
 

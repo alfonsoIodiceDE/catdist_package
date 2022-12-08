@@ -1,6 +1,5 @@
 cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   
-
   catdiss = method
   # print(map(x,class))
    # print(map_dbl(x,nlevels))
@@ -137,6 +136,5 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   out[[method]] = full_delta %>% as.matrix
   # out$delta_blocks = delta_blocks
   out$Z = Z
-  
   return(out)
 }

@@ -14,8 +14,6 @@ predict_pam = function(medoids, newdata, delta, delta_names){
   #   print(dim(delta))
   #   }
   
-
-  #
   
   Z_m_d = Z_med %*% delta
   # Z_m_d = Z_med %*% delta[1:ncol(Z_med),1:ncol(Z_med)]

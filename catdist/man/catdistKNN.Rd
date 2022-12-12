@@ -49,7 +49,7 @@ and all the method names returned by the function \code{getDistMethods()} of the
 \details{}
 \value{
 \item{truth}{the vector with the true classes}
-\item{.pred}{the vector with the predicted classes}
+\item{.pred}{a vector with the predicted classes}
 }
 \examples{
 data(australian)
@@ -65,7 +65,7 @@ train  <- df[sample, ]
 test   <- df[!sample, ]
 
 ## Apply distance-based KNN 
-## using Total variation distance
+## using the Variable Mutability dissimilarity
 ## the class variable (y) is the ninth variable
 outaus <- catdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 

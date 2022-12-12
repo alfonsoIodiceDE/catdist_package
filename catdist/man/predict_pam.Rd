@@ -33,10 +33,10 @@ sample <- sample(c(TRUE, FALSE), nrow(df), replace=TRUE, prob=c(0.8,0.2))
 train  <- df[sample, ]
 test   <- df[!sample, ]
 
-## Apply catdist() on the training data set
+## Apply cdist() on the training data set
 ## to obtain the distance matrix
-## using the supervised approach 
-outaus <- catdist(train[, -9],y = train[, 9],"supervised")
+## using the supervised approach
+outaus <- cdist(train[, -9],y = train[, 9],"supervised")
 
 ## Apply PAM on the resulting distance matrix
 outpam <- cluster::pam(outaus$distance_mat,k = 2,diss=TRUE)

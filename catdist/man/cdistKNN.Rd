@@ -1,8 +1,8 @@
-\name{catdistKNN}
-\alias{catdistKNN}
+\name{cdistKNN}
+\alias{cdistKNN}
 \title{K-nearest neighbors of categorical data}
 \usage{
-catdistKNN(train_df, assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1)
+cdistKNN(train_df, assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1)
 }
 
 \description{
@@ -13,25 +13,25 @@ This function applies the KNN classifier on a test data set based on the calcula
 \item{assess_df}{test observations}
 \item{y}{the position of the response variable in the data set (default = \code{1)}}
 \item{k}{the number of classes (default = \code{2)}}
-\item{method}{Specifies the dissimilarity of choice (default = \code{"tot_var_dist"}). 
+\item{method}{Specifies the dissimilarity of choice (default = \code{"tot_var_dist"}).
 
-Options are: 
+Options are:
 
 \code{"tot_var_dist"} for Total variation distance
 
 \code{"matching"} for simple matching
 
-\code{"eskin"} for Eskin 
+\code{"eskin"} for Eskin
 
-\code{"goodall_3"} for Goodall 3 
+\code{"goodall_3"} for Goodall 3
 
-\code{"goodall_4"} for Goodall 4 
+\code{"goodall_4"} for Goodall 4
 
-\code{"iof"} for Inverse occurency frequency 
+\code{"iof"} for Inverse occurency frequency
 
-\code{"of"} for Occurence frequency 
+\code{"of"} for Occurence frequency
 
-\code{"lin"} for Lin \code{"gifi_chi2"} for chi-squared distance 
+\code{"lin"} for Lin \code{"gifi_chi2"} for chi-squared distance
 
 \code{"var_entropy"} for Variable Entropy
 
@@ -41,7 +41,7 @@ Options are:
 
 \code{"supervised_full"} for full supervised Total variation distance; the input is the generalized contingency table of all two-way cross-tabulations between the categorical variables
 
-\code{"kullback-leibler"} for Kullback-Leibler divergence  
+\code{"kullback-leibler"} for Kullback-Leibler divergence
 
 and all the method names returned by the function \code{getDistMethods()} of the package \code{philentropy}.}
 \item{weights}{a vector with variable weights; its length should equal the total number of variables}
@@ -64,10 +64,10 @@ sample <- sample(c(TRUE, FALSE), nrow(df), replace=TRUE, prob=c(0.8,0.2))
 train  <- df[sample, ]
 test   <- df[!sample, ]
 
-## Apply distance-based KNN 
+## Apply distance-based KNN
 ## using the Variable Mutability dissimilarity
 ## the class variable (y) is the ninth variable
-outaus <- catdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
+outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 
 ## print confusion matrix
 print(table(outaus$truth, outaus$.pred))

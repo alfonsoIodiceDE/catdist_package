@@ -1,4 +1,4 @@
-catdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1){
+cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1){
   # source("R/cat_delta.r")
   # source("R/CalculateDistances2.R")
   # library(fastDummies)
@@ -9,7 +9,7 @@ catdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist",
   train_df = train_df %>% select(-response)
   truth = assess_df %>% pull(response) %>% as.character
   assess_df = assess_df %>% select(-response)
-  
+
   prep_data = list()
   prep_data$df=train_df
   prep_data$Q<-as.numeric(lapply(train_df,nlevels))
@@ -18,9 +18,9 @@ catdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist",
   # out_cdist = fct_delta(df=train_df, y=train_resp, method = method)
   # print(method)
   # delta = out_cdist$deltas[[method]] %>% as.matrix
- 
+
   delta = cat_delta(x = train_df, y = train_resp, method = method)[[2]]
- 
+
   Z_tr = dummy_cols(train_df, remove_selected_columns = TRUE) %>%
     as_tibble()
   # out_delta = cat_delta(x=train_df,y=NULL,method = method)
@@ -33,7 +33,7 @@ catdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist",
     as_tibble() %>% select(names(Z_tr))
 #  print(dim(Z_tr))
  # print(dim(delta))
-  
+
   D_tr_ts = (Z_tr %>% data.matrix()) %*% delta %*% t(Z_ts%>% data.matrix())
   D_tr_ts = as.data.table(D_tr_ts)
   preds = map_chr(.x = D_tr_ts, .f= function(x = .x){

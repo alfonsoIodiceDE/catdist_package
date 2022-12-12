@@ -48,7 +48,6 @@ print(table(outaus$truth, outaus$.pred))
 ```
 data(wbcd)
 
-## keep the factors only
 df <- wbcd
 
 ## split to train/test

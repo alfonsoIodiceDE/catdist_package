@@ -1,0 +1,9 @@
+* installing *source* package ‘catdist’ ...
+** using staged installation
+** R
+** data
+** byte-compile and prepare package for lazy loading
+Error: object ‘`%>%`’ is not exported by 'namespace:magrittr'
+Execution halted
+ERROR: lazy loading failed for package ‘catdist’
+* removing ‘/Users/amarkos/catdist_package/catdist.Rcheck/catdist’

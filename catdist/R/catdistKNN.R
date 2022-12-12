@@ -1,4 +1,4 @@
-catdistNN <-function(train_df,assess_df = NULL, y = NULL, k, method = method){
+catdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1){
   # source("R/cat_delta.r")
   # source("R/CalculateDistances2.R")
   # library(fastDummies)

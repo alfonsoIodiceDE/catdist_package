@@ -5,8 +5,9 @@ A general framework for implementing distances for categorical variables (van de
 
 ## Examples
 
-```R
+### Calculate Total Variation Distance matrix (vote)
 
+```R
 data(vote)
 ## calculate Total variation distance excluding the class variable, 
 outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
@@ -15,11 +16,11 @@ outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
 ## (supervised setting using the Total variation distance);
 ## the input matrix is the cross-tabulation of the y variable with all other variables
 outvotesupTV <- cdist(vote[,-17], y = vote[,17], method = "supervised")
+```
 
-####### ####### ####### ####### #####
-####### Run KNN on australian ####### 
-####### ####### ####### ####### #####
+### Run KNN (australian)
 
+```R
 data(australian)
 
 ## keep the factors only
@@ -41,6 +42,31 @@ outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 print(table(outaus$truth, outaus$.pred))
 # aricode::ARI(outaus$truth,outaus$.pred)
 }
+```
+
+### Run PAM (wbcd)
+```
+data(wbcd)
+
+## keep the factors only
+df <- wbcd
+
+## split to train/test
+set.seed(1)
+## use 80\% of dataset as training set and 20\% as test set
+sample <- sample(c(TRUE, FALSE), nrow(df), replace=TRUE, prob=c(0.8,0.2))
+train  <- df[sample, ]
+test   <- df[!sample, ]
+
+## Apply cdist() on the training data set
+## to obtain the distance matrix
+## using the supervised approach
+outwbcd <- cdist(train[, -10],y = train[, 10],"supervised")
 
 
+## Apply PAM on the resulting distance matrix
+outpam <- pam(outwbcd$distance_mat,k = 2,diss=TRUE)
+
+## Predict classes of new observations
+newclass <- predict_pam(train[outpam$medoids,-10], test[,-10], delta = outwbcd$delta, delta_names = outwbcd$delta_names)
 ```

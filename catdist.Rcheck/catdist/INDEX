@@ -1,0 +1,17 @@
+australian              Australian Credit Approval Data Set (UCI)
+balance                 Balance Scale Data Set (UCI)
+cars                    Car Evaluation Data Set (UCI)
+catdist-package         A general framework for implementing distances
+                        for categorical variables
+cdist                   Computing distances for categorical variables
+cdistKNN                K-nearest neighbors of categorical data
+dermatology             Car Evaluation Data Set (UCI)
+lymphography            The Lymphography Domain Data Set (UCI)
+predict_pam             Prediction function for Partitioning Around
+                        Medoids (PAM)
+soybean                 Soybean (Large) Data Set (UCI)
+tae                     Teaching Assistant Evaluation Data Set (UCI)
+tictactoe               Tic-Tac-Toe Endgame Data Set (UCI)
+vote                    Congressional Voting Records Data Set (UCI)
+wbcd                    Breast Cancer Wisconsin (Original) Data Set
+                        (UCI)

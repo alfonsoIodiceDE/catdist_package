@@ -45,7 +45,7 @@ print(table(outaus$truth, outaus$.pred))
 ```
 
 ### Run PAM (wbcd)
-```
+```R
 data(wbcd)
 
 df <- wbcd

@@ -5,7 +5,7 @@ A general framework for implementing distances for categorical variables (van de
 
 ## Examples
 
-### Calculate Total Variation Distance matrix (vote)
+### Calculate Total Variation Distance (vote)
 
 ```R
 data(vote)
@@ -16,6 +16,7 @@ outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
 ## (supervised setting using the Total variation distance);
 ## the input matrix is the cross-tabulation of the y variable with all other variables
 outvotesupTV <- cdist(vote[,-17], y = vote[,17], method = "supervised")
+outvotesupTV$distance_mat[1:5,1:5]
 ```
 
 ### Run KNN (australian)
@@ -38,8 +39,8 @@ test   <- df[!sample, ]
 ## the class variable (y) is the ninth variable
 outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 
-## print confusion matrix
-print(table(outaus$truth, outaus$.pred))
+## confusion matrix
+table(outaus$truth, outaus$.pred)
 # aricode::ARI(outaus$truth,outaus$.pred)
 }
 ```
@@ -68,4 +69,5 @@ outpam <- pam(outwbcd$distance_mat,k = 2,diss=TRUE)
 
 ## Predict classes of new observations
 newclass <- predict_pam(train[outpam$medoids,-10], test[,-10], delta = outwbcd$delta, delta_names = outwbcd$delta_names)
+table(newclass,test[,10])
 ```

@@ -46,7 +46,7 @@ Options are:
 and all the method names returned by the function \code{getDistMethods()} of the package \code{philentropy}.}
 \item{weights}{a vector with variable weights; its length should equal the total number of variables}
 }
-\details{}
+
 \value{
 \item{truth}{the vector with the true classes}
 \item{.pred}{a vector with the predicted classes}

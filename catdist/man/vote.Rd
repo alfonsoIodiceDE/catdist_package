@@ -8,24 +8,24 @@ This data set includes votes for each of the U.S. House of Representatives Congr
 
 \usage{data("vote")}
 \format{
-   A data frame with 435 observations on 16 different key issues. 
+   A data frame with 435 observations on 16 different key issues.
   \describe{
-    \item{\code{handicapped-infants}}{\code{y}, \code{n}, \code{?}}
-    \item{\code{water-project-cost-sharing}}{\code{y}, \code{n},\code{?}}
-    \item{\code{adoption-of-the-budget-resolution}}{\code{y}, \code{n},\code{?}}
-    \item{\code{physician-fee-freeze}}{\code{y}, \code{n},\code{?}}
-    \item{\code{el-salvador-aid}}{\code{y}, \code{n},\code{?}}
-    \item{\code{religious-groups-in-schools}}{\code{y}, \code{n},\code{?}}
-    \item{\code{anti-satellite-test-ban}}{\code{y}, \code{n},\code{?}}
-    \item{\code{aid-to-nicaraguan-contras}}{\code{y}, \code{n},\code{?}}
-    \item{\code{mx-missile}}{\code{y}, \code{n},\code{?}}
+    \item{\code{handicapped.infants}}{\code{y}, \code{n}, \code{?}}
+    \item{\code{water.project.cost.sharing}}{\code{y}, \code{n},\code{?}}
+    \item{\code{adoption.of.the.budget.resolution}}{\code{y}, \code{n},\code{?}}
+    \item{\code{physician.fee.freeze}}{\code{y}, \code{n},\code{?}}
+    \item{\code{el.salvador.aid}}{\code{y}, \code{n},\code{?}}
+    \item{\code{religious.groups.in.schools}}{\code{y}, \code{n},\code{?}}
+    \item{\code{anti.satellite.test.ban}}{\code{y}, \code{n},\code{?}}
+    \item{\code{aid.to.nicaraguan.contras}}{\code{y}, \code{n},\code{?}}
+    \item{\code{mx.missile}}{\code{y}, \code{n},\code{?}}
     \item{\code{immigration}}{\code{y}, \code{n},\code{?}}
-    \item{\code{synfuels-corporation-cutback}}{\code{y}, \code{n},\code{?}}
-     \item{\code{education-spending}}{\code{y}, \code{n},\code{?}}
-       \item{\code{superfund-right-to-sue}}{\code{y}, \code{n},\code{?}}
+    \item{\code{synfuels.corporation.cutback}}{\code{y}, \code{n},\code{?}}
+     \item{\code{education.spending}}{\code{y}, \code{n},\code{?}}
+       \item{\code{superfund.right.to.sue}}{\code{y}, \code{n},\code{?}}
         \item{\code{crime}}{\code{y}, \code{n},\code{?}}
-        \item{\code{duty-free-exports}}{\code{y}, \code{n},\code{?}}
-        \item{\code{export-administration-act-south-africa}}{\code{y}, \code{n},\code{?}}
+        \item{\code{duty.free.exports}}{\code{y}, \code{n},\code{?}}
+        \item{\code{export.administration.act.south.africa}}{\code{y}, \code{n},\code{?}}
    \item{\code{class}}{\code{democrat}, \code{republican}}
 
   }

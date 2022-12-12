@@ -8,12 +8,12 @@ This data set was generated to model psychological experimental results. Each ex
 
 \usage{data("balance")}
 \format{
-   A data frame with 625 rows and 5 variables (including the class variable, "class"). 
+   A data frame with 625 rows and 5 variables (including the class variable, "class").
   \describe{
-    \item{\code{Left-Weight}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
-    \item{\code{Left-Distance}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
-    \item{\code{Right-Weight}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
-    \item{\code{Right-Distance}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
+    \item{\code{Left.Weight}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
+    \item{\code{Left.Distance}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
+    \item{\code{Right.Weight}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
+    \item{\code{Right.Distance}}{one of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5}}
     \item{\code{class}}{one of \code{L}, \code{B} or \code{R}}
 }
 }

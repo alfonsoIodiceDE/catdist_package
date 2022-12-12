@@ -43,7 +43,7 @@ Options are:
 and all the method names returned by the function \code{getDistMethods()} of the package \code{philentropy}.}
 \item{weights}{a vector with variable weights; its length should equal the total number of variables}
 }
-\details{}
+
 \value{
 \item{distance matrix}{a matrix with distances between observations}
 \item{delta}{a block diagonal matrix with separate category dissimilarity matrices as diagonal blocks}

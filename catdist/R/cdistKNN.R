@@ -2,6 +2,8 @@ cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", w
   # source("R/cat_delta.r")
   # source("R/CalculateDistances2.R")
   # library(fastDummies)
+  response <- NULL
+  .x <- NULL
   colnames(train_df)[y] = "response"
   colnames(assess_df)[y] = "response"
   train_df = train_df %>%  map_df(~fct_drop(.))

@@ -1,8 +1,6 @@
 z_preproc = function(x,y=NULL,Q){
+  .x <- NULL
   out=list()
- # library("fastDummies")
-#  library("data.table")
-  # print(x)
 
   Z_tib = dummy_cols(x, remove_selected_columns = TRUE) %>% as_tibble()
   Z = dummy_cols(x, remove_selected_columns = TRUE) %>% data.matrix()

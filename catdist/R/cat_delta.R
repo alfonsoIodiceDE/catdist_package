@@ -1,5 +1,9 @@
 cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
-
+  id <- NULL
+  a <- NULL
+  b <- NULL
+  blocks <- NULL
+  .x <- NULL
   catdiss = method
   # print(map(x,class))
    # print(map_dbl(x,nlevels))

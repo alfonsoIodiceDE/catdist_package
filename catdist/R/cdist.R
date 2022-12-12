@@ -1,5 +1,16 @@
 cdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
-
+  full_delta <- NULL
+  level_stop <- NULL
+  level_start <- NULL
+  response <- NULL
+  delta_tmp <- NULL
+  all_of <- NULL
+  map2 <- NULL
+  .x <- NULL
+  a <- NULL
+  b <- NULL
+  blocks <- NULL
+  id <- NULL
   if(length(method)==1){
 
     # print(method)

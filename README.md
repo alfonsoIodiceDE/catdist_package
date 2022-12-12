@@ -1,7 +1,7 @@
 catdist
 ====
 
-A general framework for implementing distances for categorical variables (van de Velden, Iodice D'Enza, Markos and Cavicchia (in preparation)
+A general framework for implementing distances for categorical variables (van de Velden, Iodice D'Enza, Markos and Cavicchia, 2023).
 
 ## Examples
 

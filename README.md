@@ -12,7 +12,7 @@ data(vote)
 ## calculate Total variation distance excluding the class variable, 
 
 outvoteTV <- cdist(vote[,-ncol(vote)], method = "tot_var_dist")
-=======
+
 outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
 
 ## use the class variable as response variable  
@@ -42,7 +42,7 @@ test   <- df[!sample, ]
 ## the class variable (y) is the ninth variable
 
 outaus <- cdistKNN(train, test, k = 2, method = "var_mutability")
-=======
+
 outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 
 ## confusion matrix

@@ -13,7 +13,6 @@ data(vote)
 
 outvoteTV <- cdist(vote[,-ncol(vote)], method = "tot_var_dist")
 
-outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
 
 ## use the class variable as response variable  
 ## (supervised setting using the Total variation distance);

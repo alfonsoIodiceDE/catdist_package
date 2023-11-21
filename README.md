@@ -10,11 +10,10 @@ A general framework for implementing distances for categorical variables (van de
 ```R
 data(vote)
 ## calculate Total variation distance excluding the class variable, 
-<<<<<<< HEAD
+
 outvoteTV <- cdist(vote[,-ncol(vote)], method = "tot_var_dist")
 =======
 outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 ## use the class variable as response variable  
 ## (supervised setting using the Total variation distance);
@@ -41,11 +40,10 @@ test   <- df[!sample, ]
 ## Apply distance-based KNN
 ## using the Variable Mutability dissimilarity
 ## the class variable (y) is the ninth variable
-<<<<<<< HEAD
+
 outaus <- cdistKNN(train, test, k = 2, method = "var_mutability")
 =======
 outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 ## confusion matrix
 table(outaus$truth, outaus$.pred)

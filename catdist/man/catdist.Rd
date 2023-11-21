@@ -13,8 +13,13 @@ Distances for categorical variables computed based on the general framework desc
 \tabular{ll}{
 Package: \tab catdist\cr
 Type: \tab Package\cr
+<<<<<<< HEAD
+Version: \tab 0.2.0\cr
+Date: \tab 2023-05-11\cr
+=======
 Version: \tab 0.1.1\cr
 Date: \tab 2022-12-12\cr
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 License: \tab GPL-3\cr
 }
 }

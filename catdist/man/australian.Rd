@@ -4,7 +4,7 @@
 \title{
 Australian Credit Approval Data Set (UCI)}
 \description{
-This data set concerns credit card applications. It consists of 14 variables and 1 class label that quantifies the approval decision. Not much is known about the 14 features themselves for the sake of confidentiality.
+This data set concerns credit card applications. It consists of 14 variables and 1 response label that quantifies the approval decision. Not much is known about the 14 features themselves for the sake of confidentiality.
 }
 
 \usage{data("australian")}
@@ -25,7 +25,11 @@ This data set concerns credit card applications. It consists of 14 variables and
     \item{\code{A12}}{\code{1}, \code{2}, \code{3}}
     \item{\code{A13}}{continuous}
     \item{\code{A14}}{continuous}
+<<<<<<< HEAD
+    \item{\code{response}}{\code{0}, \code{1}}
+=======
     \item{\code{class}}{\code{0}, \code{1}}
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   }
 }
 \references{

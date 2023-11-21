@@ -1,5 +1,9 @@
 cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
+<<<<<<< HEAD
+  .x = NULL
+=======
   .x <- NULL
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   # Qs=ncol(Z)
   n=nrow(Z)
   Qlist=split(Q,1:length(Q))
@@ -121,8 +125,8 @@ cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
     full_delta = 1/(1+(log(n/zm)%*%t(log(n/zm))))
     diag(full_delta) = 1
     full_delta = (blocks*(1/full_delta -1))/nvar
-  #  if (sum(is.nan(full_delta))>0)
-  #    print('NaNs!!')
+    #  if (sum(is.nan(full_delta))>0)
+    #    print('NaNs!!')
   }
 
   if(method=="lin"){

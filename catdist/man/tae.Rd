@@ -3,7 +3,7 @@
 \docType{data}
 \title{Teaching Assistant Evaluation Data Set (UCI)}
 \description{
-The data consist of evaluations of teaching performance over three regular semesters and two summer semesters of 151 teaching assistant (TA) assignments at the Statistics Department of the University of Wisconsin-Madison. The scores were divided into 3 roughly equal-sized categories ("low", "medium", and "high") to form the class variable.
+The data consist of evaluations of teaching performance over three regular semesters and two summer semesters of 151 teaching assistant (TA) assignments at the Statistics Department of the University of Wisconsin-Madison. The scores were divided into 3 roughly equal-sized categories ("low", "medium", and "high") to form the response variable.
 }
 
 \usage{data("tae")}
@@ -14,7 +14,11 @@ The data consist of evaluations of teaching performance over three regular semes
     \item{\code{Course}}{Course (categorical, 26 categories)}
     \item{\code{Semester}}{Summer or regular semester (binary) \code{1=Summer}, \code{2=Regular}}
     \item{\code{Class_size}}{Class size (numerical)}
+<<<<<<< HEAD
+    \item{\code{response}}{\code{1=Low}, \code{2=Medium}, \code{3=High}}
+=======
     \item{\code{class}}{\code{1=Low}, \code{2=Medium}, \code{3=High}}
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   }
 }
 \references{

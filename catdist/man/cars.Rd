@@ -3,12 +3,12 @@
 \docType{data}
 \title{Car Evaluation Data Set (UCI)}
 \description{
-This data set contains car information with 7 attributes, including one class attribute that tells whether the car is in acceptable conditions. 
+This data set contains car information with 7 attributes, including one class attribute that tells whether the car is in acceptable conditions.
 }
 
 \usage{data("cars")}
 \format{
-   A data frame with 1728 observations on 7 variables (including the class attribute, "acceptability"). 
+   A data frame with 1728 observations on 7 variables (including the response attribute, car acceptability, indicated as "response").
   \describe{
     \item{\code{buying}}{Buying price of the car (\code{high}, \code{low}, \code{med} ,\code{vhigh})}
     \item{\code{maint}}{Price of the maintenance (\code{high}, \code{low}, \code{med}, \code{vhigh})}
@@ -16,7 +16,7 @@ This data set contains car information with 7 attributes, including one class at
     \item{\code{persons}}{Capacity in terms of persons to carry (\code{2}, \code{4}, \code{more})}
     \item{\code{lug_boot}}{Size of luggage boot (\code{big}, \code{med}, \code{small})}
     \item{\code{safety}}{Estimated safety of the car (\code{high}, \code{low}, \code{med})}
-    \item{\code{acceptability}}{\code{unacc}, \code{acc}, \code{good}, \code{vgood}}
+    \item{\code{response}}{\code{unacc}, \code{acc}, \code{good}, \code{vgood}}
   }
 }
 \references{

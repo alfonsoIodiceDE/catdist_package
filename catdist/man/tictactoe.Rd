@@ -3,7 +3,11 @@
 \docType{data}
 \title{Tic-Tac-Toe Endgame Data Set (UCI)}
 \description{
+<<<<<<< HEAD
+This data set contains the complete set of possible board configurations at the end of tic-tac-toe games, where "x" is assumed to have played first. First nine attributes are representing nine fields on tic-tac-toe board and tenth is response attribute which contains information if x player won (i.e., true when "x" has one of 8 possible ways to create a "three-in-a-row").
+=======
 This data set contains the complete set of possible board configurations at the end of tic-tac-toe games, where "x" is assumed to have played first. First nine attributes are representing nine fields on tic-tac-toe board and tenth is class attribute which contains information if x player won (i.e., true when "x" has one of 8 possible ways to create a "three-in-a-row").
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 }
 
 \usage{data("tictactoe")}
@@ -19,7 +23,11 @@ This data set contains the complete set of possible board configurations at the 
     \item{\code{BL}}{bottom left square, a factor with levels \code{b}, \code{o}, \code{x}}
     \item{\code{BM}}{bottom middle square, a factor with levels \code{b}, \code{o}, \code{x}}
     \item{\code{BR}}{bottom right square, a factor with levels \code{b}, \code{o}, \code{x}}
+<<<<<<< HEAD
+    \item{\code{response}}{true: \code{x} won, false: \code{x} lost}
+=======
     \item{\code{class}}{true: \code{x} won, false: \code{x} lost}
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   }
 }
 \references{
@@ -30,4 +38,8 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 
 \examples{
 data(tictactoe)}
+<<<<<<< HEAD
 \keyword{datasets}
+=======
+\keyword{datasets}
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b

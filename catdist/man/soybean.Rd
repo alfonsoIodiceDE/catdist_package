@@ -8,7 +8,11 @@ There are 19 classes, only the first 15 of which have been used in prior work. T
 
 \usage{data("soybean")}
 \format{
+<<<<<<< HEAD
+  A data frame with 307 observations and 36 variables (including the class attribute, "response").
+=======
   A data frame with 307 observations and 36 variables (including the class attribute, "class").
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   \describe{
     \item{\code{date}}{0 = april, 1=may, 2=june, 3=july, 4=august, 5=september, 6=october, ?}
     \item{\code{plant.stand}}{0=normal, 1=lt-normal, ?}
@@ -45,7 +49,11 @@ There are 19 classes, only the first 15 of which have been used in prior work. T
     \item{\code{seed.size}}{0=norm, 1=lt-norm, ?}
     \item{\code{shriveling}}{0=absent, 1=present, ?}
     \item{\code{roots}}{0=norm, 1=rotted, 2=galls-cysts, ?}
+<<<<<<< HEAD
+       \item{\code{response}}{diaporthe-stem-canker, charcoal-rot, rhizoctonia-root-rot, phytophthora-rot, brown-stem-rot, powdery-mildew, downy-mildew, brown-spot, bacterial-blight, bacterial-pustule, purple-seed-stain, anthracnose, phyllosticta-leaf-spot, alternarialeaf-spot, frog-eye-leaf-spot, diaporthe-pod-&-stem-blight, cyst-nematode, 2-4-d-injury, herbicide-injury}
+=======
        \item{\code{class}}{diaporthe-stem-canker, charcoal-rot, rhizoctonia-root-rot, phytophthora-rot, brown-stem-rot, powdery-mildew, downy-mildew, brown-spot, bacterial-blight, bacterial-pustule, purple-seed-stain, anthracnose, phyllosticta-leaf-spot, alternarialeaf-spot, frog-eye-leaf-spot, diaporthe-pod-&-stem-blight, cyst-nematode, 2-4-d-injury, herbicide-injury}
+>>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 }
 }
 \references{

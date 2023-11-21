@@ -18,7 +18,7 @@ outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
 ## use the class variable as response variable  
 ## (supervised setting using the Total variation distance);
 ## the input matrix is the cross-tabulation of the y variable with all other variables
-outvotesupTV <- cdist(vote[,-17], y = vote[,17], method = "supervised")
+outvotesupTV <- cdist(vote[,-ncol(vote)], y = vote[,ncol(vote)], method = "supervised")
 outvotesupTV$distance_mat[1:5,1:5]
 ```
 
@@ -40,8 +40,6 @@ test   <- df[!sample, ]
 ## Apply distance-based KNN
 ## using the Variable Mutability dissimilarity
 ## the class variable (y) is the ninth variable
-
-outaus <- cdistKNN(train, test, k = 2, method = "var_mutability")
 
 outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
 

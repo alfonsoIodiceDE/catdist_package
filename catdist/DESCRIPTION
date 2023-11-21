@@ -1,17 +1,15 @@
 Package: catdist
 Type: Package
-Title: Distances for Categorical Data 
+Title: Distances for Categorical Data
 Version: 0.2.0
 Author: Alfonso Iodice D'Enza [aut, cre], Angelos Markos [aut], Michel van de Velden [aut], Carlo Cavicchia [aut]
 Maintainer: Angelos Markos <amarkos at gmail.com>, Alfonso Iodice D'Enza <iodicede@gmail.com>
 Description: A general framework for implementing distances for categorical variables (van de Velden, Iodice D'Enza, Markos and Cavicchia, 2023).
-<<<<<<< HEAD
 Date: 2023-05-11
-=======
-Date: 2022-12-12
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 Depends: philentropy,R (>= 3.5.0)
-Imports: dplyr, tibble, tidytable, Matrix, magrittr, purrr, forcats, data.table, fastDummies,cluster
+Imports: dplyr, tibble, tidytable, Matrix, magrittr, purrr, forcats,
+        data.table, fastDummies,cluster
 License: GPL-3
 Encoding: UTF-8
 NeedsCompilation: no
+Packaged: 2023-11-06 08:49:59 UTC; amarkos

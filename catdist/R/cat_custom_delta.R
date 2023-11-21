@@ -1,9 +1,5 @@
 cat_custom_delta<-function(ZZod,Z,Z_y,Z_list,zm,Q,nvar,method,Qs){
-<<<<<<< HEAD
   .x = NULL
-=======
-  .x <- NULL
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   # Qs=ncol(Z)
   n=nrow(Z)
   Qlist=split(Q,1:length(Q))

@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 cat_delta <- function(x, y = NULL, method = NULL, method_cat="tot_var_dist", mkw_p = 1){
-=======
-cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   id <- NULL
   a <- NULL
   b <- NULL
   blocks <- NULL
   .x <- NULL
-<<<<<<< HEAD
 
   # if(method=="association_based"){
   #   ab_method=method
@@ -16,30 +11,18 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   # }else{
   #   ab_method=method
   # }
-=======
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   catdiss = method
   # print(map(x,class))
   # print(map_dbl(x,nlevels))
-<<<<<<< HEAD
   x = purrr::map_df(x,fct_drop)
   # print(map_dbl(x,nlevels))
 
 
   if(is.null(dim(x))){
-=======
-
-
-    if(is.null(dim(x))){
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
     Q=nlevels(x)
   }else{
     Q=map_dbl(x,nlevels)
-<<<<<<< HEAD
   }
-=======
-    }
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 
   n=nrow(x)
@@ -51,15 +34,8 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
 
   Z = z_prep$Z %>% data.matrix()
 
-<<<<<<< HEAD
   ZZod = z_prep$ZZod
   zm = z_prep$zm
-=======
-
-    ZZod = z_prep$ZZod
-    zm = z_prep$zm
-
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
   Z_list = z_prep$Z_list
   # level_pos = z_prep$level_pos
@@ -79,7 +55,6 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
     # print("in custom")
     full_delta = cat_custom_delta(ZZod=ZZod,Z=Z,Z_y=Z_y,Z_list=Z_list,
                                   zm=zm,Q=Q,nvar=nvar,method=method,Qs=Qs)
-<<<<<<< HEAD
     ### Checks for NA / NaN
     # is.nan.data.frame <- function(x)
     #    do.call(cbind, lapply(x, is.nan))
@@ -88,16 +63,6 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
     #    print(sum(is.na(as.matrix(full_delta))))
     #  full_delta[is.nan.data.frame(full_delta)] <- 0
     # full_delta[is.na(full_delta)]=0
-=======
-  ### Checks for NA / NaN
-   # is.nan.data.frame <- function(x)
-  #    do.call(cbind, lapply(x, is.nan))
-
-  #  if (sum(is.na(as.matrix(full_delta))) >0)
-  #    print(sum(is.na(as.matrix(full_delta))))
-  #  full_delta[is.nan.data.frame(full_delta)] <- 0
-   # full_delta[is.na(full_delta)]=0
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   }else{
 
 
@@ -149,11 +114,7 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
       )
       )
     # print("distance_blocks$block_dist")
-<<<<<<< HEAD
     # print(distance_blocks$block_dist)
-=======
-     # print(distance_blocks$block_dist)
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
     #
 
     ####################################################################
@@ -188,10 +149,7 @@ cat_delta <- function(x, y = NULL, method = NULL, mkw_p = 1){
   out[[method_cat]] = full_delta %>% as.matrix
   # out$delta_blocks = delta_blocks
   out$Z = Z
-<<<<<<< HEAD
 
-=======
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   return(out)
 }
 

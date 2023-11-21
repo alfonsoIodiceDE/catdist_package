@@ -52,11 +52,7 @@ and all the method names returned by the function \code{getDistMethods()} of the
 \examples{
 data(vote)
 ## calculate Total variation distance excluding the class variable,
-<<<<<<< HEAD
 outvoteTV <- cdist(vote[,-ncol(vote)], method = "tot_var_dist")
-=======
-outvoteTV <- cdist(vote[,-17], method = "tot_var_dist")
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 ## calculate Hellinger distance excluding the class variable;
 ## this distance is calculated via the philentropy package,

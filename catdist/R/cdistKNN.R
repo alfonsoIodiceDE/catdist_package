@@ -1,19 +1,7 @@
-<<<<<<< HEAD
 cdistKNN <- function(train_df,assess_df = NULL, k = 2, method = "tot_var_dist"){
   .x = NULL
   response = NULL
   train_df = train_df %>%  purrr::map_df(~fct_drop(.))
-=======
-cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1){
-  # source("R/cat_delta.r")
-  # source("R/CalculateDistances2.R")
-  # library(fastDummies)
-  response <- NULL
-  .x <- NULL
-  colnames(train_df)[y] = "response"
-  colnames(assess_df)[y] = "response"
-  train_df = train_df %>%  map_df(~fct_drop(.))
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   train_resp = train_df %>% pull(response) %>% as.character
   train_df = train_df %>% select(-response)
   truth = assess_df %>% pull(response) %>% as.character
@@ -24,7 +12,6 @@ cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", w
   prep_data$Q<-as.numeric(lapply(train_df,nlevels))
   prep_data$y=train_resp
 
-<<<<<<< HEAD
   delta = cat_delta(x = train_df, y = train_resp, method_cat = method)[[method]]
 
   Z_tr = dummy_cols(train_df, remove_selected_columns = TRUE) %>%
@@ -34,26 +21,6 @@ cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", w
 
   Z_ts = dummy_cols(rbind(assess_df), remove_selected_columns = TRUE) %>%
     as_tibble() %>% select(names(Z_tr))
-=======
-  # out_cdist = fct_delta(df=train_df, y=train_resp, method = method)
-  # print(method)
-  # delta = out_cdist$deltas[[method]] %>% as.matrix
-
-  delta = cat_delta(x = train_df, y = train_resp, method = method)[[2]]
-
-  Z_tr = dummy_cols(train_df, remove_selected_columns = TRUE) %>%
-    as_tibble()
-  # out_delta = cat_delta(x=train_df,y=NULL,method = method)
-  # delta = out_delta$full_delta #%>% as.matrix()
-  # Z_tr = out_delta$Z
-  # print(names(Z_tr))
-  n_tr = nrow(Z_tr)
-
-  Z_ts = dummy_cols(rbind(assess_df), remove_selected_columns = TRUE) %>%
-    as_tibble() %>% select(names(Z_tr))
-#  print(dim(Z_tr))
- # print(dim(delta))
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
   D_tr_ts = (Z_tr %>% data.matrix()) %*% delta %*% t(Z_ts%>% data.matrix())
   D_tr_ts = as.data.table(D_tr_ts)
@@ -64,8 +31,5 @@ cdistKNN <-function(train_df,assess_df, y = 1, k = 2, method = "tot_var_dist", w
   })
   return(tibble(truth=factor(truth), .pred = factor(preds)))
 }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b

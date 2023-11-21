@@ -3,11 +3,7 @@
 \docType{data}
 \title{Congressional Voting Records Data Set (UCI)}
 \description{
-<<<<<<< HEAD
 This data set includes votes for each of the U.S. House of Representatives Congressmen on the 16 key votes identified by the CQA. The CQA lists nine different types of votes: voted for, paired for, and announced for (these three simplified to yea), voted against, paired against, and announced against (these three simplified to nay), voted present, voted present to avoid conflict of interest, and did not vote or otherwise make a position known (these three simplified to an unknown disposition). The response variable indicates the political party of the congressmen.
-=======
-This data set includes votes for each of the U.S. House of Representatives Congressmen on the 16 key votes identified by the CQA. The CQA lists nine different types of votes: voted for, paired for, and announced for (these three simplified to yea), voted against, paired against, and announced against (these three simplified to nay), voted present, voted present to avoid conflict of interest, and did not vote or otherwise make a position known (these three simplified to an unknown disposition). The class variable indicates the political party of the congressmen.
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 }
 
 \usage{data("vote")}
@@ -30,11 +26,7 @@ This data set includes votes for each of the U.S. House of Representatives Congr
         \item{\code{crime}}{\code{y}, \code{n},\code{?}}
         \item{\code{duty.free.exports}}{\code{y}, \code{n},\code{?}}
         \item{\code{export.administration.act.south.africa}}{\code{y}, \code{n},\code{?}}
-<<<<<<< HEAD
    \item{\code{response}}{\code{democrat}, \code{republican}}
-=======
-   \item{\code{class}}{\code{democrat}, \code{republican}}
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
   }
 }

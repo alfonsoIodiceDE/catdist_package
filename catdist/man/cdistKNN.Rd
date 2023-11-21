@@ -2,11 +2,7 @@
 \alias{cdistKNN}
 \title{K-nearest neighbors of categorical data}
 \usage{
-<<<<<<< HEAD
 cdistKNN(train_df, assess_df = NULL, k = 2, method = "tot_var_dist")
-=======
-cdistKNN(train_df, assess_df, y = 1, k = 2, method = "tot_var_dist", weights = 1)
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 }
 
 \description{
@@ -15,10 +11,6 @@ This function applies the KNN classifier on a test data set based on the calcula
 \arguments{
 \item{train_df}{training observations}
 \item{assess_df}{test observations}
-<<<<<<< HEAD
-=======
-\item{y}{the position of the response variable in the data set (default = \code{1)}}
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 \item{k}{the number of classes (default = \code{2)}}
 \item{method}{Specifies the dissimilarity of choice (default = \code{"tot_var_dist"}).
 
@@ -51,10 +43,6 @@ Options are:
 \code{"kullback-leibler"} for Kullback-Leibler divergence
 
 and all the method names returned by the function \code{getDistMethods()} of the package \code{philentropy}.}
-<<<<<<< HEAD
-=======
-\item{weights}{a vector with variable weights; its length should equal the total number of variables}
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 }
 
 \value{
@@ -64,11 +52,7 @@ and all the method names returned by the function \code{getDistMethods()} of the
 \examples{
 data(australian)
 
-<<<<<<< HEAD
 ## keep the categorical variables only
-=======
-## keep the factors only
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 df <- australian[,c(1,4,5,6,8,9,11,12,15)]
 
 ## split to train/test
@@ -80,12 +64,7 @@ test   <- df[!sample, ]
 
 ## Apply distance-based KNN
 ## using the Variable Mutability dissimilarity
-<<<<<<< HEAD
 outaus <- cdistKNN(train, test, k = 2, method = "var_mutability")
-=======
-## the class variable (y) is the ninth variable
-outaus <- cdistKNN(train, test, y = 9, k = 2, method = "var_mutability")
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 ## print confusion matrix
 print(table(outaus$truth, outaus$.pred))

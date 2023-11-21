@@ -16,10 +16,6 @@ This function finds predicted classes of new observatios based on the medoids al
 \item{delta_names}{a vector with variable category names}
 }
 
-<<<<<<< HEAD
-=======
-\details{}
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 \value{
 \item{pred}{a vector with the predicted classes}
 }
@@ -45,12 +41,8 @@ outaus <- cdist(train[, -9],y = train[, 9],"supervised")
 outpam <- cluster::pam(outaus$distance_mat,k = 2,diss=TRUE)
 
 ## Predict classes of new observations
-<<<<<<< HEAD
 newclass <- predict_pam(train[outpam$medoids,-9], test[,-9],
 delta = outaus$delta, delta_names = outaus$delta_names)
-=======
-newclass <- predict_pam(train[outpam$medoids,-9], test[,-9], delta = outaus$delta, delta_names = outaus$delta_names)
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
 
 ## print confusion matrix
 print(table(newclass, test[,9]))

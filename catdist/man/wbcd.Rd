@@ -19,11 +19,7 @@ The data set provides data for 699 cancer patients on 10 features of the cell nu
     \item{\code{bland_chromatin}}{\code{1} to \code{10}}
     \item{\code{normal_nucleoli}}{\code{1} to \code{10}}
     \item{\code{mitoses}}{\code{1} to \code{10}}
-<<<<<<< HEAD
     \item{\code{response}}{cancer diagnosis: \code{2} for benign, \code{4} for malignant}
-=======
-    \item{\code{class}}{cancer diagnosis: \code{2} for benign, \code{4} for malignant}
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   }
 }
 \references{

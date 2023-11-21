@@ -1,9 +1,6 @@
 cdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
-<<<<<<< HEAD
   #source("R/cat_delta.R")
   #source("R/cat_custom_delta.R")
-=======
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
   full_delta <- NULL
   level_stop <- NULL
   level_start <- NULL
@@ -20,11 +17,7 @@ cdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
 
     # print(method)
 
-<<<<<<< HEAD
     out_delta = cat_delta(x=x,y=y,method_cat=method)
-=======
-    out_delta = cat_delta(x=x,y=y,method=method)
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
     delta = out_delta[[method]] %>% data.matrix
     delta_names = out_delta$delta_names
     ########################################################################
@@ -136,9 +129,3 @@ cdist<-function(x,y=NULL,method="tot_var_dist", weights=1){
   return(out_catdist)
   # }
 }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 72e0c5b6d717da613d07c4e0170eb887c0fe354b
